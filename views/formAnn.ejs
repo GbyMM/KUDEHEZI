@@ -1,81 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario Acción</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-        <div class="formulario">
-        <form action="/api/insertar" method="post" id="formularioAnnadir">
-            <fieldset> <!-- Información de la acción -->
-                <legend>Información de la acción</legend>
-                <label for="nombre">Nombre de la acción:</label><br>
-                <input type="text" id="nombre" name="nombre"><br>
+  <div class="formulario">
+    <form id="formularioAnnadir">
+      <fieldset>
+        <legend>Información de la acción</legend>
+        <label for="nombre">Nombre de la acción *</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
 
-                <label for="asociacionEntidad">Asociación o Entidad:</label><br>
-                <input type="text" id="asociacionEntidad" name="asociacionEntidad" maxlength="36"><br>
+        <label for="asociacionEntidad">Asociación o Entidad *</label><br>
+        <input type="text" id="asociacionEntidad" name="asociacionEntidad" maxlength="36"><br>
 
-                <label for="email">Email de contacto:</label><br>
-                <input type="email" id="email" name="email"><br>
+        <label for="email">Email de contacto *</label><br>
+        <input type="email" id="email" name="email" required><br>
 
-                <label for="telefono">Teléfono:</label><br>
-                <input type="tel" id="telefono" name="telefono"><br>
-            </fieldset><!-- Información de la acción -->
+        <label for="telefono">Teléfono *</label><br>
+        <input type="tel" id="telefono" name="telefono" required><br>
+      </fieldset>
 
-            <fieldset> <!-- Fechas -->
-                <legend>Fechas</legend>
-                <label for="fechaInicio">Fecha de inicio:</label><br>
-                <input type="date" id="fechaInicio" name="fechaInicio"><br>
+      <fieldset>
+        <legend>Fechas</legend>
+        <label for="fechaInicio">Fecha de inicio</label><br>
+        <input type="date" id="fechaInicio" name="fechaInicio"><br>
 
-                <label for="fechaFin">Fecha de fin:</label><br>
-                <input type="date" id="fechaFin" name="fechaFin"><br>
+        <label for="fechaFin">Fecha de fin</label><br>
+        <input type="date" id="fechaFin" name="fechaFin"><br>
 
-                <label for="horarios">Horarios:</label><br>
-                <input type="text" id="horarios" name="horarios" placeholder="Ej: De 10:00 a 12:00"><br>
-            </fieldset><!-- Fechas -->
+        <label for="horarios">Horarios</label><br>
+        <input type="text" id="horarios" name="horarios" placeholder="Ej: De 10:00 a 12:00"><br>
+      </fieldset>
 
-            <fieldset> <!-- Acciones -->
-                <legend>Acciones</legend>
-                <label for="tipoAccion">Tipo de acción:</label><br>
-                <select id="tipoAccion" name="tipoAccion">
-                    <option value="consulta">Consulta</option>
-                    <option value="jornada/premio">Jornada/Premio</option>
-                    <option value="uso del espacio">Uso del espacio</option>
-                    <option value="reunión/coordinación">Reunión/Coordinación</option>
-                    <option value="servicio técnico">Servicio técnico</option>
-                    <option value="formación">Formación</option>
-                    <option value="otros">Otros</option>
-                </select><br><br>
+      <fieldset>
+        <legend>Acciones</legend>
+        <label for="tipoAccion">Tipo de acción</label><br>
+        <select id="tipoAccion" name="tipoAccion">
+          <option value="consulta">consulta</option>
+          <option value="jornada/premio">jornada/premio</option>
+          <option value="uso del espacio">uso del espacio</option>
+          <option value="reunión/coordinación">reunión/coordinación</option>
+          <option value="servicio técnico">servicio técnico</option>
+          <option value="formación">formación</option>
+          <option value="otros">otros</option>
+        </select><br><br>
 
-                <label for="responsableAccion">Responsable de la acción:</label><br> <!-- Titulo checkbox -->
-                <!-- Organiza primero el input luego el label -->
-                    <input type="checkbox" name="responsableAccion[]" id="Saregune" value="Saregune">
-                     <label for="Saregune">Saregune</label>
-                    <br>
-                    <input type="checkbox" name="responsableAccion[]" id="Elkarteak" value="Elkarteak">
-                    <label for="Elkarteak">Elkarteak</label>
-                    <br>
-                    <input type="checkbox" name="responsableAccion[]" id="Batekin" value="Batekin">
-                    <label for="Batekin">Batekin</label>
-                    <br>
-                    <input type="checkbox" name="responsableAccion[]" id="AuzoTV" value="AuzoTV">
-                    <label for="AuzoTV">AuzoTV</label>
-            </fieldset><!-- Acciones -->
+        <label>Responsable de la acción</label><br>
+        <input type="checkbox" name="responsableAccion" value="Saregune"> Saregune<br>
+        <input type="checkbox" name="responsableAccion" value="Elkarteak"> Elkarteak<br>
+        <input type="checkbox" name="responsableAccion" value="Batekin"> Batekin<br>
+        <input type="checkbox" name="responsableAccion" value="AuzoTV"> AuzoTV<br>
+      </fieldset>
 
-            <fieldset><!-- Descripción y Web -->
-                <legend>Descripción y Web</legend>
-                <label for="descripcion">Descripción:</label><br>
-                <textarea id="descripcion" name="descripcion" rows="4"></textarea><br><br>
+      <fieldset>
+        <legend>Descripción y Web</legend>
+        <label for="descripcion">Descripción</label><br>
+        <textarea id="descripcion" name="descripcion" rows="4"></textarea><br><br>
 
-                <label for="web">Web:</label>
-                <input type="url" id="web" name="web">
-            </fieldset><!-- Descripción y Web -->
+        <label for="web">Web</label>
+        <input type="url" id="web" name="web">
+      </fieldset>
 
-            <button type="submit">Añadir acción</button>
-        </form>
+      <button type="submit" id="btnSubmit">Guardar</button>
+    </form>
+  </div>
 
-    </div>
+  <script src="/main.js"></script>
 </body>
 </html>

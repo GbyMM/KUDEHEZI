@@ -10,27 +10,47 @@
 </head>
 <body>
     <div class="head">
-        <h1>Gestión de Acciones</h1>
-        <div>
-            <a href="/formAnn">
-                <button class="aniadirAccion">
-                    <i class="fas fa-plus"></i>
-                    Añadir acción
-                </button>
+        <div class="bienVenido">
+           <i class="fa-regular fa-circle-user"></i>
+            <h2 class="bienVenidoText">  Bienvenida(o),  <%= user.email %></h2>
+        </div>
+       
+        <div class="botonesHead">
+             <a href="/formAnn" class="aniadirAccion">
+            <i class="fas fa-plus"></i>
+            Añadir acción
+        </a>
+            <a href="/logout" class="cerrarSesion">
+                <i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión
             </a>
         </div>
+    </div> 
+    <div class="headInferior">
+        <div class="filtrosAcciones">
+        
+        <input type="text" id="filtroNombre" placeholder="Buscar por nombre..." />
+        <input type="text" id="filtroEntidad" placeholder="Buscar por entidad..." />
+        <input type="date" id="fechaInicioDesde" />
+        <input type="date" id="fechaInicioHasta" />
+        <button id="btnFiltrar">Filtrar</button>
+        <button id="btnReset">Reset</button>
     </div>
+    </div>
+
     <div class="tablaInfo">
         <div class="cabeceraTabla">
+            <p class="pSaber"></p>
             <p>Nombre</p>
             <p>Entidad</p>
             <p>Tipo Acción</p>
             <p>Responsable(s)</p>
-            <p>Fechas</p>
-            <p>Editar</p>
+            <p>Action</p>
         </div>
         <div class="container"></div>
     </div>
+</div>
+    
 
     <script src="/app.js"></script>
 </body>

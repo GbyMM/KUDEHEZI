@@ -1,121 +1,329 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Colores */
+  --gray-one: #c0c0c0;
+  --gray-two: #ebebeb;
+  --blue-one: #3a6ea5;
+  --blue-two: #004e98;
+  --danger-color: #e74c3c;
+  --lighter-red:rgb(247, 188, 188);
 }
 
-/* -----FORMULARIO----- */
-.formulario{
-    width: 30%;
-    padding: 5px;
-    margin: 20px auto;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  height: 100vh;
+  font-family: "Space Mono", monospace;
+  background-color: var(--gray-two);
+  overflow: hidden;
 }
-fieldset{
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 5px;
+
+a {
+  text-decoration: none;
+  color: white;
 }
-/* -----TABLA----- */
-.cabeceraTabla{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    padding: 5px 10px;
-    height: 40px;
-    align-items: center;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-.tablaInfo{
-    width: 85%;
-    border: 2px solid black;
-    margin: 20px 10px;
-    border-radius: 10px;
-   /*  position: absolute;
-    top: 100px;
-    right: 0;
-    transform: translate(0%, 0%); */
-}
-.cabeceraTabla p{
-   font-size: 15px;
-}
-.containerPerson{
-    border-top: 1px solid rgb(0, 0, 0);
-    width: 100%;
-    display: grid;
-    align-items: center; 
-    text-align: center;
-    justify-content: center;
-    padding: 5px;
-    grid-template-columns: repeat(6, 1fr);
-}
-.containerPerson .editar{
-    margin-left: 90px;
-    height: 30px;
-    gap: 5px;
-    display: flex;
-    width: 70px;
-    justify-content: center;
-}
-.containerPerson .editar button{
-    border: 1px solid rgb(104, 103, 103);
-    border-radius: 5px;
-    width: 50%;
-    background-color: #e2e2e2;
-    cursor: pointer;
-}
-p{
-    font-size: 13px;
-}
-.containerPerson .saberMas {
-    background-color: transparent;
-    margin-left: 110px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    font-size: 20px;
-    width: 30px;
-}
-/* ----HEAD ----- */
+
+/* ---------------- HEAD ---------------- */
 .head {
-    background-color: #f2f2f2;
-    height: 90px;
-    display: flex;
-    position: relative;
+  background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
 }
-.head h1 {
-    font-size: 40px;
-    display: flex;
+
+.head h2 {
+  font-size: 30px;
+}
+
+.bienVenido {
     align-items: center;
-    color: #333; 
-    margin: 0 10px;
+    display: flex;
+    gap: 10px;
+    margin-top: 75px;
+    width: 30%;
+}
+
+.bienVenido i {
+  font-size: 50px;
+  color: var(--blue-two);
+}
+
+.botonesHead {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.aniadirAccion,
+.cerrarSesion,
+.filtrosAcciones button,
+#btnEntrar {
+  background-color: var(--blue-two);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: "Space Mono", monospace;
+}
+
+.cerrarSesion {
+  background-color: var(--danger-color);
+}
+
+.aniadirAccion:hover,
+.cerrarSesion:hover,
+.filtrosAcciones button:hover,
+#btnEntrar:hover {
+  background-color: var(--gray-one);
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* -------------- FORMULARIO LOGIN -------------- */
+.msgError{
+    border-left: 5px solid var(--danger-color);
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--lighter-red);
+    color: white;
+    margin-bottom: 5px;
+}
+.formularioLogin {
+  padding: 20px 40px;
+  display: flex;
+  margin: 150px auto;
+  flex-direction: column;
+  width: 400px;
+  background-color: white;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.formularioLogin h1 {
+  font-size: 40px;
+}
+.formularioLogin h2{
+    margin-bottom: 30px;
+}
+
+.formularioLogin input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--gray-one);
+  font-size: 16px;
+  transition: border 0.3s ease;
 
 }
-.head div{
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 20%;
-    right: 14%;
-    transform: translate(0%, 0%);
+.form-group{
+    margin-bottom: 10px;
+    gap: 5px;
+    display: grid;
 }
-a{
-    text-decoration: none;
-    color: white;
+.formularioLogin input:focus {
+  outline: none;
+  border-color: var(--danger-color);
+ 
 }
-.aniadirAccion {
-    background-color: #1b2a81;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  
+
+#btnEntrar {
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.aniadirAccion:hover{
-    background-color: #3f518c;
+
+/* ---------------- FORMULARIO INSERTAR ---------------- */
+.formulario {
+  width: 30%;
+  min-width: 300px;
+  padding: 5px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* ------------------ TABLA ------------------ */
+.tablaInfo {
+  width: 85%;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cabeceraTabla,
+.containerPerson {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cabeceraTabla {
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 80px 0px;
+  padding: 15px 20px;
+  font-weight: bold;
+  background-color: var(--blue-two);
+  color: white;
+  justify-content: space-between;
+}
+
+.containerPerson {
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 80px 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--gray-two);
+  position: relative;
+}
+
+.containerPerson:hover {
+  background-color: #f9f9f9;
+}
+
+.containerPerson p {
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* ----------- BOTONES DE ACCIÓN ----------- */
+.editar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.editar button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.editar button:first-child {
+  background-color: var(--blue-two);
+  color: white;
+}
+
+.editar button:last-child {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.editar button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.editar button i {
+  font-size: 12px;
+}
+
+/* ------- INFORMACIÓN EXPANDIBLE -------- */
+.extra-info {
+  grid-column: 1 / -1;
+  border-top: 1px dashed #ddd;
+  height: 0;
+  overflow: hidden;
+  background-color: #f5f7fa;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.extra-info.active {
+  height: auto;
+  padding: 15px;
+}
+
+.extra-info-item {
+  display: flex;
+  align-items: center;
+}
+
+.datos-personales,
+.info-accion {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 2px solid #ccc;
+  padding: 10px;
+}
+
+/* --------- BOTÓN TOGGLE --------- */
+.toggle-info {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--blue-two);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-info i {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.toggle-info.active i {
+  transform: rotate(180deg);
+}
+
+/* ---------- FILTROS ACCIONES ----------- */
+.filtrosAcciones {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filtrosAcciones input {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--gray-one);
 }

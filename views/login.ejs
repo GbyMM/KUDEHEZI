@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <a href="/panel">Ir a panel</a>
+    <form method="POST" action="/login"class="formularioLogin">
+        <h1>Hola,</h1>
+        <h2>Bienvenida (o)</h2>
+       <% if (error) { %>
+            <div class="msgError" id="msgError">
+                <p><%= error %></p>
+            </div>
+            <script>
+                setTimeout(() => {
+                const msg = document.getElementById('msgError');
+                if (msg) {
+                    msg.style.display = 'none';
+                }
+                }, 4000); // desaparece en 4 segundos
+            </script>
+        <% } %>
+
+        <div class="form-group">
+            <label for="email"> Email</label>
+            <input type="email" name="email"  required>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" required>
+        </div>
+        
+        <button type="submit" id="btnEntrar">Login</button>
+        
+    </form>
+
+    <script src="/app.js"></script>
 </body>
 </html>
