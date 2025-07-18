@@ -79,7 +79,7 @@ async function main() {
       }
       const hashedPassword = await bcrypt.hash(password, 10);
       await db.collection('users').insertOne({ email, password: hashedPassword });
-      res.redirect('/');
+    res.json({msg: "El usuario ha sido creado con exito"})
     });
 
     app.post('/login', async (req, res) => {
